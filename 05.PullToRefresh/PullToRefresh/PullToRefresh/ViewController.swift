@@ -24,7 +24,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
 
     @objc func pullToRefeshAction() {
-        dataSrouce.insert(NSDate() as Date, at: 0)
+        let date = NSDate()
+        print(date)
+        print(date.addingTimeInterval(60))
+        ///< https://stackoverflow.com/questions/39811352/swift-3-date-vs-nsdate
+        dataSrouce.insert(Date(), at: 0)
         refreshControl.endRefreshing()
         tableView.reloadData()
     }
